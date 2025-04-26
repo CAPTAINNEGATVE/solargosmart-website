@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar Smart Energy Solutions</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-title">
+      <img src="images/logo.png" class="site-logo">
+    </div>
+    
+    <div class="container">
+      <div class="branding">
+        <h1 class="company-name">SolarGoSmartSolutions</h1>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="savings.html">Calculator</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-image" style="background-image: url('images/homepage_bg.jpg');"></div>
+      <div class="hero-content">
+        <h1>Powering Homes & Businesses with the Sun</h1>
+        <p>Join the solar revolution today and save on your electricity bills!</p>
+        <a href="contact.html" class="cta-button">Get a Free Consultation</a>
+      </div>
+    </section>
+
+    <!-- Solar Calculator Section -->
+    <section class="solar-calculator">
+      <h2>🔆 Solar Savings Calculator</h2>
+      <p>Calculate how much you could save with a solar system!</p>
+      <form id="solarForm">
+        <label for="units">Monthly Units Consumed (kWh):</label>
+        <input type="number" id="units" name="units" required><br><br>
+    
+        <label for="rate">Electricity Rate (₹ per unit):</label>
+        <input type="number" id="rate" name="rate" required><br><br>
+    
+        <label for="efficiency">Solar Panel Efficiency (%):</label>
+        <input type="number" id="efficiency" name="efficiency" required value="70"><br><br>
+    
+        <button type="button" onclick="calculateSavings()">Calculate Savings</button>
+      </form>
+    
+      <div id="result"></div>
+    </section>
+    
+
+    <script>
+      function calculateSavings() {
+        const units = parseFloat(document.getElementById('units').value);
+        const rate = parseFloat(document.getElementById('rate').value);
+        const efficiency = parseFloat(document.getElementById('efficiency').value) / 100;
+    
+        if (isNaN(units) || isNaN(rate) || isNaN(efficiency)) {
+          document.getElementById('result').innerHTML = "Please enter valid values for all fields.";
+          return;
+        }
+    
+        const solarSystemOutput = 360; // Monthly kWh generation
+        const monthlyBillBefore = units * rate;
+        const savings = solarSystemOutput * rate * efficiency;
+        const monthlyBillAfter = monthlyBillBefore - savings;
+    
+        document.getElementById('result').innerHTML = `
+          <h3>Your Savings</h3>
+          <p><strong>Monthly Bill Before Solar:</strong> ₹${monthlyBillBefore.toFixed(2)}</p>
+          <p><strong>Monthly Savings with Solar:</strong> ₹${savings.toFixed(2)}</p>
+          <p><strong>Monthly Bill After Solar:</strong> ₹${monthlyBillAfter.toFixed(2)}</p>
+          <div class="cta-tab">
+            <p>Want to save more with Solar?</p>
+            <a href="contact.html" class="cta-button">📞 Contact Us to Get Started</a>
+          </div>
+          <div class="cta-tab">
+            <p>Want to do detail analysis?</p>
+            <a href="savings.html" class="cta-button">🔢 Solar Savings Calculator</a>
+          </div>
+        `;
+      }
+    </script>
+    
+    <!-- About Us Section -->
+    <section class="about">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About Us</h2>
+          <p>SolarSmart Energy Solutions is a local solar consultancy and installation company focused on helping homes, schools, and small businesses switch to clean and affordable solar energy.</p>
+          <p>We offer end-to-end solar services, from site surveys and subsidy assistance to professional installation and long-term maintenance.</p>
+        </div>
+        <div class="about-image">
+          <img src="images/homepage_02.avif" alt="Solar Panel Installation" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+      <h2>🌞 Why Choose SolarSmart?</h2>
+      <div class="reasons">
+        <div class="reason-card">✅ Government-approved products</div>
+        <div class="reason-card">✅ Affordable installation packages</div>
+        <div class="reason-card">✅ Trusted local technicians</div>
+        <div class="reason-card">✅ UPI-based transparent billing</div>
+        <div class="reason-card">✅ Complete subsidy assistance</div>
+        <div class="reason-card">✅ AMC (Annual Maintenance) plans</div>
+      </div>
+    </section>
+
+    <!-- Services Section with Images -->
+    <section class="services">
+      <h3>⚡ Our Services</h3>
+      <div class="service-item">
+        <img src="images/rooftop.png" alt="Solar Panel Installation" class="service-img">
+        <h4>🌇 Solar Panel Installation</h4>
+        <p>Rooftop solar setup for 1KW–5KW systems.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/field.jpeg" alt="Free Site Survey" class="service-img">
+        <h4>📝 Free Site Survey</h4>
+        <p>Energy usage analysis + system design.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/subsidy.jpg" alt="Government Subsidy Help" class="service-img">
+        <h4>💰 Govt Subsidy Application Help</h4>
+        <p>Full assistance with paperwork for subsidies.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/tubeweel.webp" alt="Battery & Inverter Setup" class="service-img">
+        <h4>🔋 Battery & Inverter Setup</h4>
+        <p>For areas with frequent power cuts.</p>
+      </div>
+      <div class="service-item">
+        <img src="images/maintenance.jpeg" alt="Annual Maintenance Plans" class="service-img">
+        <h4>🧰 Annual Maintenance Plans</h4>
+        <p>Affordable care for long-term use of your solar system.</p>
+      </div>
+    </section>
+
+    <!-- Client Segments -->
+    <section class="clients">
+      <h3>💼 Client Segments We Serve</h3>
+      <ul>
+        <li>🏠 Homes & Apartments</li>
+        <li>🏫 Coaching Centres & Schools</li>
+        <li>🏪 Retail Shops</li>
+        <li>⛽ Petrol Pumps</li>
+        <li>🏥 Small Hospitals & Clinics</li>
+        <li>🏭 Small Offices & Workshops</li>
+      </ul>
+    </section>
+
+    <!-- Savings Section -->
+    <section class="savings">
+      <h3>📊 Estimated Savings for You</h3>
+      <p><strong>Example: 3KW rooftop system</strong></p>
+      <ul>
+        <li>✅ ₹1,500–₹2,000 average monthly savings</li>
+        <li>✅ Payback in 3–4 years</li>
+        <li>✅ Government subsidy up to 40% available</li>
+      </ul>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+      <h3>💬 What Our Clients Say</h3>
+      <blockquote>
+        <p>🗣️ "My electricity bill went from ₹2,300 to ₹300. SolarSmart made the entire process easy!" – Mr. S. Verma, Shop Owner</p>
+        <p>🗣️ "Very professional and clear guidance on subsidy and equipment. Highly recommended." – Principal, N. Public School</p>
+      </blockquote>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <h3>💡 Interested in Going Solar?</h3>
+      <ul>
+        <li>👉 Contact us for a free consultation today</li>
+        <li>👉 Ask us for your estimated savings report</li>
+      </ul>
+      <p>“Let the sun pay your electricity bills!”</p>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <h3>📞 Contact Us</h3>
+    <p>☎️ Phone/WhatsApp: +91-9315378500</p>
+    <p>🌐 Website: <a href="http://www.solargosmartenergysolutions.com" class="co">www.solargosmartenergysolutions.com</a></p>
+    <p>📍 Location: Ghaziabad</p>
+    <p>📧 Email: bhurabharti4@gmail.com</p>
+    <p>🧾 GST Registered | MSME Certified</p>
+  </footer>
+</body>
+</html>

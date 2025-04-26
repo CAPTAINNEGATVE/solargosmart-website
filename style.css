@@ -1,0 +1,745 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e9f7ef; /* Light greenish background for a natural feel */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #2d6a4f; /* Deep green for eco-friendly vibe */
+}
+
+h1 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.4em;
+    margin-top: 40px;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Consistent Image Sizes (excluding hero image) */
+img:not(.hero img) {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Uniform sizing for images in sections like about, services, etc. */
+.about-image img,
+.service-card img,
+.contact-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Header Styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #2d6a4f; /* Green header */
+    color: white;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #f1c40f; /* Bright yellow for hover effect */
+}
+
+nav a.active {
+    color: #f39c12; /* Golden yellow for active state */
+}
+
+/* Main Section Styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2d6a4f;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td:hover {
+    background-color: #ecf9f1; /* Light green hover effect for rows */
+}
+
+/* Form Styling */
+form {
+    margin-top: 20px;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+input[type="submit"] {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #27ae60; /* Darker green for hover effect */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2d6a4f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Buttons */
+button, .cta-button {
+    background-color: #f39c12; /* Bright golden color */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover, .cta-button:hover {
+    background-color: #f1c40f; /* Bright yellow for hover */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: url('../images/homepage_bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 150px 30px;
+    text-align: center;
+    height: 40vh;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker overlay for contrast */
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: #ffd700;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.6em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #d35400; /* Darker golden color on hover */
+}
+
+/* About Section */
+.about {
+    padding: 80px 20px;
+    background-color: #ecf9f1; /* Light green background */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1 1 50%;
+    padding: 20px;
+}
+
+.about-text h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-image {
+    flex: 1 1 45%;
+    padding: 20px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Why Choose Section */
+.why-choose {
+    background-color: #f5f5f5;
+    padding: 60px 20px;
+}
+
+.reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.reason-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.reason-card:hover {
+    background-color: #eaf1f7;
+}
+
+/* Client Testimonials Section */
+.testimonials blockquote {
+    font-style: italic;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2em;
+    }
+
+    .hero p {
+        font-size: 1.4em;
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text, .about-image {
+        flex: 1 1 100%;
+        padding: 10px;
+    }
+
+    .reasons {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .reason-card {
+        font-size: 1em;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2e3a46;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+    color: #ff8c00;
+}
+
+.service-card h3 {
+    font-size: 1.8em;
+    margin: 10px 0;
+    color: #2e3a46;
+}
+
+.service-card p {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #2e3a46;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff8c00;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2e3a46;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Contact Section */
+.contact-section {
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #2e3a46;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.contact-item {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.contact-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+}
+
+.contact-form h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+/* Solar Savings Calculator */
+.solar-calculator {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.solar-calculator h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #2d6a4f;
+}
+
+.solar-calculator label {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.solar-calculator input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1.1em;
+}
+
+.solar-calculator button {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.solar-calculator button:hover {
+    background-color: #27ae60;
+}
+
+#savings-result {
+    margin-top: 20px;
+    font-size: 1.3em;
+    color: #2d6a4f;
+}
+/* General Form Styling */
+.contact-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+  }
+  
+  .contact-form h3 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #2d6a4f;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 1.2em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.1em;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  button.cta-button {
+    background-color: #2d6a4f;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.cta-button:hover {
+    background-color: #27ae60;
+  }
+  
+  /* Specific Input Field Styling */
+  input[type="tel"] {
+    /* Specific styling for the mobile number input */
+    -moz-appearance: textfield; /* Removes the spinner in Firefox */
+    appearance: textfield; /* Removes the spinner in modern browsers */
+  }
+  
+  /* Responsive Design for Small Screens */
+  .contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .contact-card {
+    background-color: #f9f9f9;
+    padding: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .contact-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .contact-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-card p {
+    font-size: 1rem;
+    color: #333;
+  }
+  .header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .site-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .company-name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #e29a14;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  .logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spacing between logo and name */
+  }
+  
+  .site-logo {
+    width: 40px;
+    height: auto;
+    max-height: 40px;
+    object-fit: contain;
+  }
+/* Styles for Solar Savings Calculator */
+.solar-calculator {
+    margin-top: 20px;
+  }
+  
+  .calculator-inputs {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .calculator-inputs label {
+    font-weight: bold;
+  }
+  
+  .calculator-inputs input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .calculator-results {
+    margin-top: 20px;
+  }
+  
+  .calculator-results p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .calculator-explanation {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+  }
+  
+  .calculator-explanation h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .calculator-explanation h4 {
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .calculator-explanation ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .calculator-explanation p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+    
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .cta-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .cta-button:hover {
+    background-color: #1976D2;
+  }
+  
